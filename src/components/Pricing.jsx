@@ -51,7 +51,7 @@ export default function Pricing() {
                     </div>
 
                     <button
-                        onClick={() => window.open('https://forms.google.com/your-form-id', '_blank')}
+                        onClick={() => window.open('https://forms.gle/1ibTMLCtcTJKMKzm8', '_blank')}
                         className="w-full py-4 bg-green-500 hover:bg-green-600 text-black font-bold rounded-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
                     >
                         Claim Your Spot

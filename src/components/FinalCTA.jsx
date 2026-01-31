@@ -19,7 +19,7 @@ export default function FinalCTA() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="px-12 py-5 bg-white text-black font-bold text-xl rounded-full shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] transition-shadow"
-                    onClick={() => window.open('https://forms.google.com/your-form-id', '_blank')}
+                    onClick={() => window.open('https://forms.gle/1ibTMLCtcTJKMKzm8', '_blank')}
                 >
                     Claim Your Spot Now
                 </motion.button>
