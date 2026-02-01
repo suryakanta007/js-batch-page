@@ -2,56 +2,95 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Code2 } from 'lucide-react';
 import { LampContainer } from './ui/lamp';
 
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.3,
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut"
+        }
+    }
+};
+
 export default function Hero() {
     return (
-        <LampContainer className="bg-[#0a0a0a]">
+        <LampContainer className="bg-[#0a0a0a] -mb-96">
             <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                    delay: 0.3,
-                    duration: 0.8,
-                    ease: "easeInOut",
-                }}
-                className="relative z-10 text-center max-w-4xl mx-auto"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="relative z-10 text-center max-w-4xl mx-auto flex flex-col items-center pt-[400px] md:pt-[400px]"
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-6 backdrop-blur-sm">
-                    <span className="flex h-2 w-2 rounded-full animate-pulse" style={{ backgroundColor: 'oklch(0.8 0.13 199.51)' }} />
-                    <span className="text-sm font-medium" style={{ color: 'oklch(0.8 0.13 199.51)' }}>Founding Cohort Open</span>
-                </div>
+                <motion.div
+                    variants={itemVariants}
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md shadow-lg shadow-green-900/10 hover:border-white/20 transition-colors"
+                >
+                    <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: 'oklch(0.8 0.13 199.51)' }}></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5" style={{ backgroundColor: 'oklch(0.8 0.13 199.51)' }}></span>
+                    </span>
+                    <span className="text-sm font-semibold tracking-wide" style={{ color: 'oklch(0.8 0.13 199.51)' }}>Founding Cohort Open</span>
+                </motion.div>
 
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-gray-500">
-                    Be Among the First 30 to Master JavaScript in Just 4 Weeks
-                </h1>
+                <motion.h1
+                    variants={itemVariants}
+                    className="text-4xl md:text-6xl font-bold tracking-tight mb-8 bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-gray-400 leading-tight"
+                >
+                    Be Among the First 30 to<br />
+                    Master JavaScript in Just 4 Weeks
+                </motion.h1>
 
-                <p className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                <motion.p
+                    variants={itemVariants}
+                    className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+                >
                     Join the founding cohort. Build 4 real projects. Learn live from an expert.<br />
                     <span className="text-white font-semibold">All for ₹899.</span>
-                </p>
+                </motion.p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <motion.div
+                    variants={itemVariants}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-8"
+                >
                     <motion.button
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(16,185,129,0.5)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 bg-[#10b981] hover:bg-[#059669] text-white rounded-full font-bold text-lg transition-colors shadow-[0_0_20px_rgba(16,185,129,0.4)] flex items-center gap-2 cursor-pointer"
+                        className="px-8 py-4 bg-[#10b981] hover:bg-[#059669] text-white rounded-full font-bold text-lg transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] flex items-center gap-2 cursor-pointer group"
                         onClick={() => window.open('https://forms.gle/1ibTMLCtcTJKMKzm8', '_blank')}
                     >
                         Claim Your Spot
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </motion.button>
 
                     <motion.button
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-medium text-lg backdrop-blur-sm transition-colors flex items-center gap-2 cursor-pointer"
+                        className="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-medium text-lg backdrop-blur-sm transition-all flex items-center gap-2 cursor-pointer hover:border-white/30"
                         onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                         See What You'll Build
                         <Code2 className="w-5 h-5" />
                     </motion.button>
-                </div>
+                </motion.div>
 
-                <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-500">
+                <motion.div
+                    variants={itemVariants}
+                    className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-500 font-medium"
+                >
                     <div className="flex items-center gap-2">
                         <div className="flex -space-x-2">
                             {[1, 2, 3].map((i) => (
@@ -62,7 +101,7 @@ export default function Hero() {
                     </div>
                     <div className="w-px h-4 bg-white/10" />
                     <div>Enrollment closes in 5 days</div>
-                </div>
+                </motion.div>
             </motion.div>
         </LampContainer>
     );

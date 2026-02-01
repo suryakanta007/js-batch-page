@@ -59,13 +59,13 @@ export default function Instructor() {
                         </div>
 
                         <div className="flex gap-4">
-                            <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+                            <a href="https://github.com/suryakanta007" className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
                                 <Github className="w-5 h-5" />
                             </a>
-                            <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+                            <a href="https://x.com/_suryakanta07?t=AGO-KKYjJBOAz8_HZ1Gy6A&s=09" className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
                                 <Twitter className="w-5 h-5" />
                             </a>
-                            <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+                            <a href="https://www.linkedin.com/in/suryakant-sahu-716715273/" className="p-3 rounded-full bg-white/5 hover:bg-white/10 transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </a>
                         </div>
