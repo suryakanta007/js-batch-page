@@ -4,9 +4,9 @@ import { ChevronDown } from 'lucide-react';
 
 export default function FAQ() {
     const faqs = [
-        { question: "Will sessions be recorded?", answer: "This founding cohort is 100% live. We may add recordings in future batches, but to ensure commitment, this batch focuses on live attendance." },
+        { question: "Will sessions be recorded?", answer: "This founding cohort is 100% live. Yes we will provide recordings through Google Drive." },
         { question: "I'm a complete beginner. Will I keep up?", answer: "Yes! We start from zero. No prior coding experience is needed. We build up from variables to complex applications." },
-        { question: "What is will be the class timing?", answer: "Classes will be held on 7pm/7.30pm to 8pm. It can be extended based on the requirement of topic." },
+        { question: "What is will be the class timing?", answer: "Classes will be held on 10.15pm to 12am. It can be extended based on the requirement of topic." },
         { question: "Why is the price so low?", answer: "This is our founding cohort (beta launch). You get 55% off in exchange for your feedback and active participation." },
         { question: "What if I miss a session?", answer: "Code files and project assets are shared after every class. You can catch up, but live attendance is highly recommended for Q&A." },
         { question: "Is there a refund policy?", answer: "Yes! If you're not satisfied after the first week (4 sessions), we'll refund your money. No questions asked." },
